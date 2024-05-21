@@ -1,11 +1,12 @@
-import {  ColumnDef } from "@tanstack/react-table";
+import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "../ui/button";
 import { LuArrowUpDown } from "react-icons/lu";
 
 export type MainTableType = {
   year: number;
   totalJob: number;
-  averageSalary: string;
+  averageSalary: string | number;
+  formattedAverage: string;
 };
 
 export const columns: ColumnDef<MainTableType>[] = [
@@ -24,7 +25,7 @@ export const columns: ColumnDef<MainTableType>[] = [
     },
   },
   {
-    accessorKey: "averageSalary",
+    accessorKey: "formattedAverage",
     header: ({ column }) => {
       return (
         <Button
