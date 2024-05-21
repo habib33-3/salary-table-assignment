@@ -1,11 +1,9 @@
-import useJob from "./hook/useJob";
+import MainTable from "./components/MainTable/MainTable";
 
 const App = () => {
-  const job = useJob();
-
   return (
     <div className="min-h-screen w-full bg-[#111] text-[#f1f]">
-      {job.length}
+      <MainTable />
     </div>
   );
 };
