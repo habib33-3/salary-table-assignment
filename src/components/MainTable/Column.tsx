@@ -7,6 +7,7 @@ export type MainTableType = {
   totalJob: number;
   averageSalary: string | number;
   formattedAverage: string;
+  jobsForYear: JobType[];
 };
 
 export const columns: ColumnDef<MainTableType>[] = [

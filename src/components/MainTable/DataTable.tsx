@@ -16,17 +16,22 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useState } from "react";
+import SecondaryTable from "../SecondaryTable";
+import { MainTableType } from "./Column";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
 
-export function DataTable<TData, TValue>({
+export function DataTable<TData extends MainTableType | null, TValue>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) {
+}: Readonly<DataTableProps<TData, TValue>>) {
   const [sorting, setSorting] = useState<SortingState>([]);
+  // const [rowYear, setRowYear] = useState<Number | null>(null);
+  const [jobData, setJobData] = useState<TData | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const table = useReactTable({
     data,
@@ -38,6 +43,16 @@ export function DataTable<TData, TValue>({
       sorting,
     },
   });
+
+  const handleSheetOpen = (rowData: TData) => {
+    setIsOpen(true);
+    setJobData(rowData);
+  };
+
+  const handleSheetClose = () => {
+    setIsOpen(false);
+    setJobData(null);
+  };
 
   return (
     <div className="rounded-md border">
@@ -64,8 +79,10 @@ export function DataTable<TData, TValue>({
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow
+                onClick={() => handleSheetOpen(row.original)}
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
+                className="cursor-pointer"
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
@@ -80,12 +97,18 @@ export function DataTable<TData, TValue>({
                 colSpan={columns.length}
                 className="h-24 text-center"
               >
-               No Data Found
+                No Data Found
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
+
+      <SecondaryTable
+        isOpen={isOpen}
+        handleSheetClose={handleSheetClose}
+        tableData={jobData}
+      />
     </div>
   );
 }

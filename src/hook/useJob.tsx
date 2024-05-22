@@ -42,7 +42,8 @@ const useJob = () => {
         year: year,
         totalJob: jobNumber,
         averageSalary: avgSalary,
-        formattedAverage:formatCurrency(avgSalary)
+        formattedAverage: formatCurrency(avgSalary),
+        jobsForYear,
       };
     });
   }, [jobs]);
