@@ -40,9 +40,9 @@ const SecondaryTable = ({
   };
   return (
     <Sheet open={isOpen}>
-      <SheetContent className="overflow-y-scroll">
+      <SheetContent className="overflow-y-scroll bg-gray-900 text-gray-300">
         <SheetHeader>
-          <SheetTitle className="text-center">
+          <SheetTitle className="text-center text-stone-400 font-bold text-3xl">
             Jobs in {tableData?.year}
           </SheetTitle>
         </SheetHeader>

@@ -6,13 +6,15 @@ const MainTable = () => {
   const data = useJob();
 
   return (
-    <div>
-      <div className="container mx-auto py-10">
-        <DataTable
-          columns={columns}
-          data={data}
-        />
-      </div>
+    <div className="container mx-auto py-10">
+      <h1 className="text-xl font-bold text-stone-400 mb-4 text-center w-max mx-auto ">
+        Job Trends in Year
+      </h1>
+
+      <DataTable
+        columns={columns}
+        data={data}
+      />
     </div>
   );
 };

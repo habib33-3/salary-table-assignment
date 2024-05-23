@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import ChartTitle from "./ChartTitle";
 
 ChartJS.register(
   CategoryScale,
@@ -84,6 +85,7 @@ const LineChart = () => {
           data={jobChartData}
           className=""
         />
+        <ChartTitle title="Number of Jobs per year" />
       </div>
       <div className="md:h-96 h-64  w-full md:w-1/2">
         <Line
@@ -91,6 +93,7 @@ const LineChart = () => {
           data={salaryChartData}
           className=""
         />
+        <ChartTitle title="Average Salary per year" />
       </div>
     </div>
   );

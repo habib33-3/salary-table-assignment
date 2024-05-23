@@ -29,7 +29,6 @@ export function DataTable<TData extends MainTableType | null, TValue>({
   data,
 }: Readonly<DataTableProps<TData, TValue>>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  // const [rowYear, setRowYear] = useState<Number | null>(null);
   const [jobData, setJobData] = useState<TData | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
