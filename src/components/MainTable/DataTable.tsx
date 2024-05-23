@@ -96,7 +96,7 @@ export function DataTable<TData extends MainTableType | null, TValue>({
                 colSpan={columns.length}
                 className="h-24 text-center"
               >
-                No Data Found
+                Loading ....
               </TableCell>
             </TableRow>
           )}
