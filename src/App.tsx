@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="min-h-screen w-full bg-gray-900 text-gray-300">
       <MainTable />
-      <LineChart/>
+      <LineChart />
     </div>
   );
 };

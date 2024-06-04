@@ -78,8 +78,8 @@ const LineChart = () => {
   };
 
   return (
-    <div className="w-full md:w-4/5 mx-auto  flex flex-col md:flex-row items-center justify-center md:justify-around">
-      <div className="md:h-96 h-64 w-full md:w-1/2">
+    <div className="mx-auto flex w-full flex-col items-center justify-center md:w-4/5 md:flex-row md:justify-around">
+      <div className="h-64 w-full md:h-96 md:w-1/2">
         <Line
           options={jobChartOptions}
           data={jobChartData}
@@ -87,7 +87,7 @@ const LineChart = () => {
         />
         <ChartTitle title="Number of Jobs per year" />
       </div>
-      <div className="md:h-96 h-64  w-full md:w-1/2">
+      <div className="h-64 w-full md:h-96 md:w-1/2">
         <Line
           options={salaryChartOptions}
           data={salaryChartData}

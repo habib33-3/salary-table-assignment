@@ -42,7 +42,7 @@ const SecondaryTable = ({
     <Sheet open={isOpen}>
       <SheetContent className="overflow-y-scroll bg-gray-900 text-gray-300">
         <SheetHeader>
-          <SheetTitle className="text-center text-stone-400 font-bold text-3xl">
+          <SheetTitle className="text-center text-3xl font-bold text-stone-400">
             Jobs in {tableData?.year}
           </SheetTitle>
         </SheetHeader>

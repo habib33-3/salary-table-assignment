@@ -7,7 +7,7 @@ const MainTable = () => {
 
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-xl font-bold text-stone-400 mb-4 text-center w-max mx-auto ">
+      <h1 className="mx-auto mb-4 w-max text-center text-xl font-bold text-stone-400">
         Job Trends in Year
       </h1>
 
